@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="/manifest.json" rel="manifest"/>
+<link href="/assets/manifest-CMNsDWOY.json" rel="manifest"/>
 <meta content="#F5B942" name="theme-color"/>
 <meta content="yes" name="mobile-web-app-capable"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
@@ -6196,6 +6196,9 @@
   #main-nav .nav-tab { padding-left: 8px !important; padding-right: 8px !important; }
 }
 </style>
+  <script type="module" crossorigin src="/assets/home-CE-2Us1V.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/supabase-C0Bv1Tz9.js">
+  <link rel="modulepreload" crossorigin href="/assets/ai-client-CUwLIU24.js">
 </head>
 <body>
 <!-- =============================================
@@ -7029,7 +7032,6 @@
 ============================================= -->
 <script src="./wipro_section_a.js"></script>
 <script src="./java_oop_unit1.js"></script>
-<script src="./question-bank/index.js" type="module"></script>
 <script src="./cases_hard_u2_u5.js"></script>
 <script>
   /* Complete offline data reconstructed from the supplied SQL seed. */
@@ -7186,7 +7188,7 @@
     const CLUE_DXP_PENALTY = 5;
 
 
-    const sharedSupabasePromise = import('./supabase.js').then((module) => module.supabase);
+    const sharedSupabasePromise = import('data:text/javascript;base64,aW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnaHR0cHM6Ly9lc20uc2gvQHN1cGFiYXNlL3N1cGFiYXNlLWpzQDInDQoNCmNvbnN0IGZhbGxiYWNrVXJsID0gJ2h0dHBzOi8vbWJ0d2RoYWR5b25saXJhaW5teG0uc3VwYWJhc2UuY28nDQoNCmNvbnN0IGZhbGxiYWNrUHVibGlzaGFibGVLZXkgPQ0KICAnc2JfcHVibGlzaGFibGVfbmY2dGVzbmtrNzFhX05XaHdGSWpHQV9WTnRLSmdDTCcNCg0KLy8gQWxsb3cgb3B0aW9uYWwgcnVudGltZSBjb25maWd1cmF0aW9uLg0KLy8gSWYgbm9uZSBpcyBwcm92aWRlZCwgdXNlIHRoZSBwcm9qZWN0J3MgcHVibGljIFN1cGFiYXNlIGNyZWRlbnRpYWxzLg0KY29uc3QgcnVudGltZVVybCA9DQogICh0eXBlb2Ygd2luZG93ICE9PSAndW5kZWZpbmVkJyAmJiB3aW5kb3cuX19TVVBBQkFTRV9VUkxfXykgfHwNCiAgZmFsbGJhY2tVcmwNCg0KY29uc3QgcnVudGltZUtleSA9DQogICh0eXBlb2Ygd2luZG93ICE9PSAndW5kZWZpbmVkJyAmJg0KICAgIHdpbmRvdy5fX1NVUEFCQVNFX1BVQkxJU0hBQkxFX0tFWV9fKSB8fA0KICBmYWxsYmFja1B1Ymxpc2hhYmxlS2V5DQoNCmlmICghcnVudGltZVVybCB8fCAhcnVudGltZUtleSkgew0KICB0aHJvdyBuZXcgRXJyb3IoJ01pc3NpbmcgU3VwYWJhc2UgY29uZmlndXJhdGlvbicpDQp9DQoNCmV4cG9ydCBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZUNsaWVudChydW50aW1lVXJsLCBydW50aW1lS2V5KQ==').then((module) => module.supabase);
     let notificationRealtimeChannel = null;
     let notificationRefreshTimer = null;
 
@@ -10863,7 +10865,7 @@ console.log("[DXP DEBUG] Save Error:", error);
       // Administrators have a separate experience. The role decision is made
       // through the server-side is_admin RPC; the client never grants admin access.
       try {
-        const { isCurrentUserAdmin } = await import('./auth-utils.js');
+        const { isCurrentUserAdmin } = await import('data:text/javascript;base64,aW1wb3J0IHsgc3VwYWJhc2UgYXMgZGVmYXVsdFN1cGFiYXNlIH0gZnJvbSAnLi9zdXBhYmFzZS5qcyc7CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gaXNDdXJyZW50VXNlckFkbWluKHN1cGFiYXNlID0gZGVmYXVsdFN1cGFiYXNlKSB7CiAgICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZS5ycGMoJ2lzX2FkbWluJyk7CiAgICByZXR1cm4gIWVycm9yICYmIGRhdGEgPT09IHRydWU7Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBnZXRQb3N0QXV0aFJvdXRlKHN1cGFiYXNlID0gZGVmYXVsdFN1cGFiYXNlKSB7CiAgICByZXR1cm4gKGF3YWl0IGlzQ3VycmVudFVzZXJBZG1pbihzdXBhYmFzZSkpID8gJ2FkbWluLmh0bWwjZGFzaGJvYXJkJyA6ICdob21lLmh0bWwnOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZW5zdXJlVXNlclByb2ZpbGUoc3VwYWJhc2UgPSBkZWZhdWx0U3VwYWJhc2UsIHVzZXIsIG92ZXJyaWRlcyA9IHt9KSB7CiAgICBpZiAoIXVzZXI/LmlkKSByZXR1cm4gbnVsbDsKCiAgICBjb25zdCB7IGRhdGE6IGV4aXN0aW5nLCBlcnJvcjogcmVhZEVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgICAgIC5mcm9tKCdwcm9maWxlcycpCiAgICAgICAgLnNlbGVjdCgnKicpCiAgICAgICAgLmVxKCdpZCcsIHVzZXIuaWQpCiAgICAgICAgLm1heWJlU2luZ2xlKCk7CgogICAgaWYgKHJlYWRFcnJvcikgdGhyb3cgcmVhZEVycm9yOwogICAgaWYgKGV4aXN0aW5nKSByZXR1cm4gZXhpc3Rpbmc7CgogICAgY29uc3QgbWV0YWRhdGEgPSB1c2VyLnVzZXJfbWV0YWRhdGEgfHwge307CiAgICBjb25zdCBmYWxsYmFja0VtYWlsTmFtZSA9IHVzZXIuZW1haWw/LnNwbGl0KCdAJylbMF0gfHwgJ0RldGVjdGl2ZSc7CiAgICBjb25zdCBuYW1lID0gU3RyaW5nKAogICAgICAgIG92ZXJyaWRlcy5kaXNwbGF5TmFtZSB8fAogICAgICAgIG1ldGFkYXRhLmRpc3BsYXlfbmFtZSB8fAogICAgICAgIG1ldGFkYXRhLmZ1bGxfbmFtZSB8fAogICAgICAgIGZhbGxiYWNrRW1haWxOYW1lCiAgICApLnRyaW0oKTsKCiAgICBjb25zdCBwYXlsb2FkID0gewogICAgICAgIGlkOiB1c2VyLmlkLAogICAgICAgIHVzZXJuYW1lOiBuYW1lLAogICAgICAgIGRpc3BsYXlfbmFtZTogbmFtZSwKICAgICAgICBlbWFpbDogb3ZlcnJpZGVzLmVtYWlsIHx8IHVzZXIuZW1haWwgfHwgbnVsbAogICAgfTsKCiAgICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgICAgIC5mcm9tKCdwcm9maWxlcycpCiAgICAgICAgLmluc2VydChwYXlsb2FkKQogICAgICAgIC5zZWxlY3QoJyonKQogICAgICAgIC5tYXliZVNpbmdsZSgpOwoKICAgIGlmIChlcnJvcikgewogICAgICAgIC8vIEEgY29uY3VycmVudCBwcm9maWxlIHRyaWdnZXIgY2FuIHdpbiB0aGUgcmFjZS4gUmUtcmVhZCBpbnN0ZWFkIG9mCiAgICAgICAgLy8gY3JlYXRpbmcgYSBkdXBsaWNhdGUgb3IgZmFpbGluZyB0aGUgYXV0aGVudGljYXRpb24gZmxvdyB1bm5lY2Vzc2FyaWx5LgogICAgICAgIGlmIChlcnJvci5jb2RlID09PSAnMjM1MDUnKSB7CiAgICAgICAgICAgIGNvbnN0IHsgZGF0YTogcmFjZWRQcm9maWxlLCBlcnJvcjogcmFjZWRFcnJvciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgICAgICAgICAgIC5mcm9tKCdwcm9maWxlcycpCiAgICAgICAgICAgICAgICAuc2VsZWN0KCcqJykKICAgICAgICAgICAgICAgIC5lcSgnaWQnLCB1c2VyLmlkKQogICAgICAgICAgICAgICAgLm1heWJlU2luZ2xlKCk7CiAgICAgICAgICAgIGlmICghcmFjZWRFcnJvciAmJiByYWNlZFByb2ZpbGUpIHJldHVybiByYWNlZFByb2ZpbGU7CiAgICAgICAgfQogICAgICAgIHRocm93IGVycm9yOwogICAgfQoKICAgIHJldHVybiBkYXRhOwp9CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gcmVkaXJlY3RBdXRoZW50aWNhdGVkVXNlcihzdXBhYmFzZSA9IGRlZmF1bHRTdXBhYmFzZSkgewogICAgY29uc3QgeyBkYXRhOiB7IHNlc3Npb24gfSB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNzaW9uKCk7CiAgICBpZiAoIXNlc3Npb24/LnVzZXIpIHJldHVybiBmYWxzZTsKICAgIGNvbnN0IHJvdXRlID0gYXdhaXQgZ2V0UG9zdEF1dGhSb3V0ZShzdXBhYmFzZSk7CiAgICB3aW5kb3cubG9jYXRpb24ucmVwbGFjZShuZXcgVVJMKHJvdXRlLCB3aW5kb3cubG9jYXRpb24uaHJlZikuaHJlZik7CiAgICByZXR1cm4gdHJ1ZTsKfQo=');
         if (await isCurrentUserAdmin(supabase)) {
           window.location.replace(new URL('admin.html#dashboard', window.location.href).href);
           return;
@@ -10930,11 +10932,6 @@ console.log("[DXP DEBUG] Save Error:", error);
       });
   }
 })();
-</script>
-<script src="/notes-ai.js" type="module"></script>
-<script type="module">
-  import { initAndroidPushNotifications } from "/push-notifications.js";
-  window.addEventListener("load", () => initAndroidPushNotifications());
 </script>
 <script>
 (function () {
