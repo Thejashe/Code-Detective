@@ -4,36 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Detective | Authentication</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            font-family: Inter, Arial, sans-serif;
-            color: #eef6ff;
-            background:
-                radial-gradient(circle at 20% 20%, rgba(0, 229, 255, .10), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, .12), transparent 30%),
-                #050b12;
-        }
-
         .auth-card {
             width: 100%;
             max-width: 430px;
             padding: 34px;
-            border: 1px solid rgba(0, 229, 255, .22);
+            border: 1px solid var(--cd-border);
             border-radius: 22px;
-            background: rgba(10, 20, 32, .94);
-            box-shadow: 0 0 50px rgba(0, 229, 255, .08);
+            background: var(--cd-bg-card);
+            box-shadow: var(--cd-shadow-card);
         }
 
         .logo {
@@ -48,13 +30,13 @@
         }
 
         .cyan {
-            color: #00e5ff;
+            color: var(--cd-amber);
         }
 
         .subtitle {
             margin: 10px 0 28px;
             text-align: center;
-            color: #8394a7;
+            color: var(--cd-text-muted);
             line-height: 1.5;
         }
 
@@ -65,7 +47,7 @@
             margin-bottom: 25px;
             padding: 5px;
             border-radius: 12px;
-            background: #07111c;
+            background: var(--cd-bg-tertiary);
         }
 
         .tab {
@@ -73,14 +55,14 @@
             border-radius: 9px;
             padding: 11px;
             cursor: pointer;
-            color: #8495a8;
+            color: var(--cd-text-muted);
             background: transparent;
             font-weight: 700;
         }
 
         .tab.active {
-            color: #001014;
-            background: #00e5ff;
+            color: var(--cd-text-on-amber);
+            background: var(--cd-amber);
         }
 
         .field {
@@ -102,19 +84,19 @@
             transform: translateY(-50%);
             border: 0;
             background: transparent;
-            color: #8fa3b7;
+            color: var(--cd-text-muted);
             cursor: pointer;
             font-size: 16px;
         }
 
         .password-toggle:hover {
-            color: #00e5ff;
+            color: var(--cd-amber);
         }
 
         label {
             display: block;
             margin-bottom: 7px;
-            color: #a9b8c7;
+            color: var(--cd-text-secondary);
             font-size: 13px;
             font-weight: 700;
         }
@@ -122,16 +104,16 @@
         input {
             width: 100%;
             padding: 14px;
-            border: 1px solid #24364a;
+            border: 1px solid var(--cd-border);
             border-radius: 10px;
             outline: none;
-            color: white;
-            background: #08131f;
+            color: var(--cd-text-primary);
+            background: var(--cd-bg-input);
         }
 
         input:focus {
-            border-color: #00e5ff;
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, .08);
+            border-color: var(--cd-amber);
+            box-shadow: 0 0 0 3px var(--cd-amber-glow);
         }
 
         #nameField {
@@ -145,8 +127,8 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            color: #001014;
-            background: #00e5ff;
+            color: var(--cd-text-on-amber);
+            background: var(--cd-amber);
             font-size: 15px;
             font-weight: 900;
         }
@@ -167,49 +149,31 @@
 
         #message.error {
             display: block;
-            color: #ff6b81;
-            border: 1px solid rgba(255, 71, 87, .25);
-            background: rgba(255, 71, 87, .08);
+            color: var(--cd-crimson);
+            border: 1px solid rgba(255, 93, 115, .25);
+            background: rgba(255, 93, 115, .08);
         }
 
         #message.success {
             display: block;
-            color: #4dffc3;
-            border: 1px solid rgba(77, 255, 195, .25);
-            background: rgba(77, 255, 195, .08);
+            color: var(--cd-green);
+            border: 1px solid rgba(56, 211, 159, .25);
+            background: rgba(56, 211, 159, .08);
         }
 
         .footer {
             margin-top: 25px;
             text-align: center;
-            color: #53667a;
+            color: var(--cd-text-muted);
             font-size: 12px;
         }
-
-        /* Midnight Gold palette */
-        body {
-            color: #FFFFFF;
-            background: radial-gradient(circle at 20% 20%, rgba(245, 185, 66, .10), transparent 30%), radial-gradient(circle at 80% 80%, rgba(201, 146, 28, .10), transparent 30%), #0E1117;
-        }
-        .auth-card { border-color: #303B4D; background: rgba(27, 34, 48, .96); box-shadow: 0 0 50px rgba(245, 185, 66, .08); }
-        .cyan { color: #F5B942; }
-        .subtitle, .footer { color: #7B8798; }
-        .tabs { background: #1B2230; }
-        .tab { color: #B6BECF; }
-        .tab.active, .submit-btn { color: #0E1117; background: #F5B942; }
-        label { color: #B6BECF; }
-        input { color: #FFFFFF; border-color: #303B4D; background: #222B3A; }
-        input:focus { border-color: #F5B942; box-shadow: 0 0 0 3px rgba(245, 185, 66, .10); }
-        #message.error { color: #FF5D73; border-color: rgba(255,93,115,.25); background: rgba(255,93,115,.08); }
-        #message.success { color: #38D39F; border-color: rgba(56,211,159,.25); background: rgba(56,211,159,.08); }
-
 
         .auth-link {
             display: inline-block;
             margin-top: 10px;
             border: 0;
             padding: 0;
-            color: #F5B942;
+            color: var(--cd-amber);
             background: transparent;
             font: inherit;
             font-size: 12px;
@@ -217,12 +181,13 @@
             cursor: pointer;
         }
         .auth-link:hover { text-decoration: underline; }
+
         .auth-divider {
             display: flex;
             align-items: center;
             gap: 10px;
             margin: 20px 0 14px;
-            color: #68778a;
+            color: var(--cd-text-muted);
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: .12em;
@@ -231,60 +196,49 @@
             content: "";
             height: 1px;
             flex: 1;
-            background: #303B4D;
+            background: var(--cd-border);
         }
+
         .google-btn {
             width: 100%;
             padding: 13px 14px;
-            border: 1px solid #303B4D;
+            border: 1px solid var(--cd-border);
             border-radius: 10px;
             cursor: pointer;
-            color: #FFFFFF;
-            background: #222B3A;
+            color: var(--cd-text-primary);
+            background: var(--cd-bg-tertiary);
             font-size: 14px;
             font-weight: 800;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            transition: var(--cd-transition-fast);
         }
-        .google-btn:hover { border-color: #F5B942; }
+        .google-btn:hover { border-color: var(--cd-amber); }
         .google-btn:disabled { cursor: not-allowed; opacity: .6; }
-        .google-mark {
-            width: 18px;
-            height: 18px;
-            display: inline-block;
-            flex: 0 0 18px;
-        }
-        .google-mark path {
-            stroke: none;
-        }
+
+        .google-mark { width: 18px; height: 18px; display: inline-block; flex: 0 0 18px; }
+        .google-mark path { stroke: none; }
+
         #forgotPanel { display: none; }
         #forgotPanel.active { display: block; }
+
         .back-to-login {
             display: block;
             margin: 14px auto 0;
             border: 0;
             background: transparent;
-            color: #8fa3b7;
+            color: var(--cd-text-muted);
             cursor: pointer;
             font: inherit;
             font-size: 12px;
         }
-        .back-to-login:hover { color: #F5B942; }
+        .back-to-login:hover { color: var(--cd-amber); }
 
         @media (max-width: 520px) {
-            body {
-                align-items: flex-start;
-                padding: 18px 12px;
-            }
-
-            .auth-card {
-                margin: auto 0;
-                padding: 24px 18px;
-                border-radius: 16px;
-            }
-
+            body { align-items: flex-start; padding: 18px 12px; }
+            .auth-card { margin: auto 0; padding: 24px 18px; border-radius: 16px; }
             .logo { font-size: 30px; }
             h1 { font-size: 23px; }
             .subtitle { margin-bottom: 20px; font-size: 14px; }
@@ -297,12 +251,13 @@
             body { align-items: flex-start; }
         }
     </style>
-  <script type="module" crossorigin src="/assets/login-BJcJDbZj.js"></script>
+  <script type="module" crossorigin src="/assets/login-DPJJ4Gu4.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/supabase-C0Bv1Tz9.js">
   <link rel="modulepreload" crossorigin href="/assets/auth-utils-BqN8yWp4.js">
+  <link rel="stylesheet" crossorigin href="/assets/login-DXDTMyDp.css">
 </head>
 
-<body>
+<body class="cd-page-auth">
 
 <div class="auth-card">
 
@@ -406,6 +361,7 @@
 
 </div>
 
+<script src="./theme.js"></script>
 
 </body>
 </html>

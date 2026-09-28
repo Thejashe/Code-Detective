@@ -5194,7 +5194,25 @@
       display:grid;
       gap:9px;
       min-width:0;
-      overflow:visible;
+      max-height:400px;
+      overflow-y:auto;
+      overflow-x:hidden;
+      padding-right:4px;
+    }
+    .achievement-list::-webkit-scrollbar {
+      width: 5px;
+    }
+    .achievement-list::-webkit-scrollbar-track {
+      background: var(--bg-tertiary);
+      border-radius: 3px;
+    }
+    .achievement-list::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--amber), var(--cyan), var(--purple));
+      border-radius: 3px;
+      border: 1px solid var(--bg-card);
+    }
+    .achievement-list::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--cyan), var(--purple), var(--amber));
     }
     .achievement-card {
       min-width:0;
@@ -6196,7 +6214,7 @@
   #main-nav .nav-tab { padding-left: 8px !important; padding-right: 8px !important; }
 }
 </style>
-  <script type="module" crossorigin src="/assets/home-CE-2Us1V.js"></script>
+  <script type="module" crossorigin src="/assets/home-BD-Gpqa1.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/supabase-C0Bv1Tz9.js">
   <link rel="modulepreload" crossorigin href="/assets/ai-client-CUwLIU24.js">
 </head>
@@ -6738,10 +6756,11 @@
 <div class="notes-format-grid" id="notes-format-grid">
 <button class="notes-format-card" data-download-format="pdf" type="button"><span class="format-icon">PDF</span><strong>PDF</strong><small>Print-ready document</small></button>
 <button class="notes-format-card" data-download-format="docx" type="button"><span class="format-icon">DOCX</span><strong>Word</strong><small>Editable document</small></button>
-<button class="notes-format-card" data-download-format="txt" type="button"><span class="format-icon">TXT</span><strong>Plain text</strong><small>Lightweight &amp; universal</small></button>
+<button class="notes-format-card" data-download-format="txt" type="button"><span class="format-icon">TXT</span><strong>Plain text</strong><small>Lightweight & universal</small></button>
 <button class="notes-format-card" data-download-format="md" type="button"><span class="format-icon">MD</span><strong>Markdown</strong><small>Developer-friendly notes</small></button>
 <button class="notes-format-card" data-download-format="html" type="button"><span class="format-icon">HTML</span><strong>Web page</strong><small>Open in any browser</small></button>
 <button class="notes-format-card" data-download-format="json" type="button"><span class="format-icon">JSON</span><strong>Data</strong><small>Structured note export</small></button>
+<button class="notes-format-card" data-download-format="original" type="button" id="download-original-btn" hidden><span class="format-icon">📎</span><strong>Original File</strong><small>Download attached PDF/DOCX</small></button>
 </div>
 <div aria-live="polite" class="notes-download-progress" id="notes-download-progress"></div>
 </div>
